@@ -92,9 +92,6 @@ export class CharacterController {
 
     const isWalking = this.moveAmount > 0.08;
     this.walk.setEffectiveTimeScale(THREE.MathUtils.lerp(0.72, 1.18, this.moveAmount));
-    if (this.walking === isWalking) return;
-
-    this.walking = isWalking;
 
     if (isWalking) {
       if (this.standup) {
@@ -102,6 +99,7 @@ export class CharacterController {
         this.standup.enabled = false;
       }
 
+      this.walking = true;
       this.walk.enabled = true;
       this.walk.paused = false;
       this.walk.setEffectiveWeight(1);
@@ -109,6 +107,8 @@ export class CharacterController {
       return;
     }
 
+    this.walking = false;
+    this.walk.setEffectiveWeight(0);
     this.walk.paused = true;
   }
 

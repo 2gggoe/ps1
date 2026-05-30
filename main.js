@@ -1,13 +1,14 @@
 import * as THREE from "../vendor/three.module.js";
 import { GLTFLoader } from "../vendor/GLTFLoader.js";
-import { CameraFollow } from "./cameraFollow.js";
-import { CharacterController } from "./characterController.js";
-import { Collectibles, TOTAL_COLLECTIBLES } from "./collectibles.js";
-import { createUI } from "./ui.js";
+import { CameraFollow } from "./cameraFollow.js?v=walk-floor-fix-2";
+import { CharacterController } from "./characterController.js?v=walk-floor-fix-2";
+import { Collectibles, TOTAL_COLLECTIBLES } from "./collectibles.js?v=walk-floor-fix-2";
+import { createUI } from "./ui.js?v=walk-floor-fix-2";
 
 const canvas = document.querySelector("#scene");
 const ui = createUI(TOTAL_COLLECTIBLES);
 window.__demoDebug = {
+  version: "walk-floor-fix-2",
   status: "booting",
   frames: 0,
   triangles: 0,
@@ -63,7 +64,7 @@ let collectibles;
 let controlsEnabled = false;
 let gameState = "loading";
 
-const CHARACTER_FLOOR_OFFSET = 0.18;
+const CHARACTER_FLOOR_OFFSET = 0.42;
 const startPosition = new THREE.Vector3(-2.22, CHARACTER_FLOOR_OFFSET, 0.2);
 const bounds = {
   minX: -2.42,
