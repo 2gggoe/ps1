@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ice Cream Backrooms Mini Demo</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene"></canvas>
+
+      <section id="loading" class="overlay splash-overlay is-visible">
+        <div class="splash-panel">
+          <h1 class="brand-title">MAXIDUO</h1>
+          <p class="mode-title">BACKROOMS</p>
+          <p class="splash-copy">You woke up here.</p>
+          <p id="loadingText" class="splash-copy">Loading scene</p>
+          <button id="startButton" class="primary slash-button" type="button" disabled>ENTER</button>
+        </div>
+      </section>
+
+      <section id="hud" class="hud is-hidden" aria-live="polite">
+        <div class="counter">
+          <span>Ice Cream</span>
+          <strong id="counterText">0 / 5</strong>
+        </div>
+        <p id="missionText">Collect all ice creams</p>
+      </section>
+
+      <div id="joystick" class="joystick is-hidden" aria-hidden="true">
+        <div id="joystickKnob" class="joystick-knob"></div>
+      </div>
+
+      <div id="lookPad" class="look-pad is-hidden" aria-hidden="true">
+        <div class="look-ring"></div>
+      </div>
+
+      <section id="winScreen" class="overlay win-overlay">
+        <div class="victory-panel">
+          <p class="brand-title victory-brand">MAXIDUO</p>
+          <h2 class="victory-title">YOU FOUND<br />ALL 5 ICE CREAMS!</h2>
+          <p class="victory-subtitle">СТРАЧАТЕЛА</p>
+          <img class="victory-photo" src="./public/images/victory-photo.webp" alt="Victory reward" />
+          <button id="restartButton" class="primary slash-button victory-button" type="button">PLAY AGAIN</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
